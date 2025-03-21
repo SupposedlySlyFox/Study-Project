@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Professional Webpage</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            background-color: grey;
+            margin: 5px auto;
+        }
+        
+        .half_circle {
+            width: 100px;
+            height: 50px;
+            border-top-left-radius: 50px;
+            border-top-right-radius: 50px;
+            background-color: grey;
+            margin: 5px auto;
+        }
+
+        h3 {
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img id="profile-image" src="https://avatars.githubusercontent.com/u/50972379?v=4" width="100"></img>
+        <div id=".circle" class="circle"></div>
+        <div id=".half_circle" class="half_circle"></div>
+        <h3>Welcome!</h3>
+        <p>This is a test profile web-page.</p>
+        <p>Feel free to explore more <a href="https://github.com/SupposedlySlyFox/">here</a>.</p>
+    </div>
+    <script>
+        const image = document.getElementById('profile-image');
+        const circle = document.getElementById('.circle');
+        const halfCircle = document.getElementById('.half_circle');
+    
+        image.onload = () => {
+            circle.style.display = 'none';
+            halfCircle.style.display = 'none';
+        };
+    
+        image.onerror = () => {
+            circle.style.display = 'block';
+            halfCircle.style.display = 'block';
+        };
+    </script>
+</body>
+</html>
+
