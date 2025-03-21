@@ -74,10 +74,11 @@
         <p>This is a test profile web-page.</p>
         <p>Feel free to explore more <a href="https://github.com/SupposedlySlyFox/">here</a>.</p>
     </div>
+
     <script>
         const image = document.getElementById('profile-image');
-        const circle = document.getElementById('.circle');
-        const halfCircle = document.getElementById('.half_circle');
+        const circle = document.querySelector('.circle');
+        const halfCircle = document.querySelector('.half_circle');
     
         image.onload = () => {
             circle.style.display = 'none';
