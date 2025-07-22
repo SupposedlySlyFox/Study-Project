@@ -7,7 +7,6 @@ rpgclass = {
 
 let classUser = "mage"
 
-
 function classUsage() {
   switch(classUser) {
     case "mage":
@@ -21,17 +20,24 @@ function classUsage() {
   }
 }
 
-function attack() {
-  let weapon = classUsage();
-  console.log(`You, as a ${classUser}, attacked using ${weapon}`);
+class RPG {
 
-  const weaponData = rpgclass[classUser]["inventory"][weapon];
+  constructor(classUser, weapon){
+    this.classUser = classUser
+    this.weapon = weapon
+  }
 
-  if (weaponData && weaponData.damage) {
-    console.log(`You have dealt ${weaponData.damage} damage`);
-  } else {
-    console.log(`No damage detected. You probably slapped them with your ${weapon}`);
+  attack() {
+    let weapon = classUsage();
+    console.log(`You, as a ${this.classUser}, attacked using ${this.weapon}`);
+
+    const weaponData = rpgclass[classUser]["inventory"][classUsage()];
+
+    if (weaponData && weaponData.damage) {
+      console.log(`You have dealt ${weaponData.damage} damage`);
+    } else {
+      console.log(`You used your ${this.weapon} to attack the enemy, but no damage has been dealt.`);
+    }
   }
 }
-
-attack();
+RPG.attack();
